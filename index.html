@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#f4f7fb">
   <title>TinderSE</title>
   <link rel="stylesheet" href="style.css?v=2">
-  <link rel="stylesheet" href="ux-v3.css?v=3">
-  <link rel="stylesheet" href="energy-v4.css?v=5">
+  <link rel="stylesheet" href="ux-v5.css?v=5">
+  <link rel="stylesheet" href="energy-v5.css?v=5">
 </head>
 <body>
   <div class="app-shell">
@@ -49,39 +49,17 @@
       </section>
 
       <section id="soundGrid" class="sound-grid" aria-live="polite"></section>
-
-      <section id="emptyState" class="empty-state" hidden>
-        条件に一致する音源はありません。
-      </section>
+      <section id="emptyState" class="empty-state" hidden>条件に一致する音源はありません。</section>
     </main>
 
-    <footer class="compare-dock" aria-label="音の強さの時間分布比較">
-      <div class="compare-head">
-        <div id="nowMain" class="compare-current-name">音源をタップしてください</div>
-        <button id="pinBtn" class="pin-btn" type="button" aria-label="比較基準" data-state="empty" disabled></button>
-      </div>
-
+    <footer class="compare-dock" aria-label="Energy Envelope比較">
       <div class="wave-stage">
-        <canvas id="waveCanvas" class="wave-canvas" aria-hidden="true"></canvas>
-        <div class="wave-axis" aria-hidden="true"><span>0</span><span>130 ms</span></div>
-      </div>
-
-      <div class="wave-meta" aria-live="polite">
-        <div class="wave-meta-row now">
-          <span class="wave-swatch solid" aria-hidden="true"></span>
-          <span id="waveNowEc" class="wave-ec">EC —</span>
-        </div>
-        <div id="wavePinRow" class="wave-meta-row pin" hidden>
-          <span class="wave-swatch dashed" aria-hidden="true"></span>
-          <span id="wavePinName" class="wave-name"></span>
-          <span id="wavePinEc" class="wave-ec"></span>
-        </div>
+        <canvas id="energyEnvelopeCanvas" class="energy-envelope-canvas" aria-hidden="true"></canvas>
       </div>
     </footer>
   </div>
 
-  <script src="app.js?v=2" defer></script>
-  <script src="ux-v3.js?v=3" defer></script>
-  <script src="energy-v4.js?v=5" defer></script>
+  <script src="energy-v5.js?v=5" defer></script>
+  <script src="app-v5.js?v=5" defer></script>
 </body>
 </html>
