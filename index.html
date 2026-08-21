@@ -16,7 +16,8 @@
           <p class="subtitle">タップで試聴、✓で採用</p>
         </div>
         <div class="summary" aria-live="polite">
-          <span id="selectedCount">採用 0</span>
+          <span id="selectedCount">✓ 0</span>
+          <span id="consultCount" class="consult-summary">? 0</span>
           <span id="playedCount">試聴 0</span>
         </div>
       </div>
@@ -25,6 +26,7 @@
 
       <div class="toolbar">
         <button id="selectedOnlyBtn" class="tool-btn" type="button" aria-pressed="false">採用のみ</button>
+        <button id="consultOnlyBtn" class="tool-btn consult-filter" type="button" aria-pressed="false" aria-label="要相談のみ">?</button>
         <button id="unplayedOnlyBtn" class="tool-btn" type="button" aria-pressed="false">未試聴のみ</button>
         <button id="packBtn" class="tool-btn pack-btn" type="button">音源パック読込</button>
         <input id="packInput" type="file" accept=".pack,application/octet-stream" hidden>
@@ -54,7 +56,7 @@
     <footer class="compare-dock" aria-label="波形比較">
       <div class="compare-head">
         <div id="nowMain" class="compare-current-name">音源をタップしてください</div>
-        <button id="pinBtn" class="pin-btn" type="button" aria-label="現在の波形を比較基準として固定" disabled>波形をピン止め</button>
+        <button id="pinBtn" class="pin-btn" type="button" aria-label="現在の波形を比較基準として固定" data-state="empty" disabled></button>
       </div>
 
       <div class="wave-stage">
@@ -65,7 +67,6 @@
       <div class="wave-meta" aria-live="polite">
         <div class="wave-meta-row now">
           <span class="wave-swatch solid" aria-hidden="true"></span>
-          <span id="waveNowName" class="wave-name wave-name-current"></span>
           <span id="waveNowEc" class="wave-ec">EC —</span>
         </div>
         <div id="wavePinRow" class="wave-meta-row pin" hidden>
@@ -78,6 +79,5 @@
   </div>
 
   <script src="app.js" defer></script>
-  <script src="dock-ui.js" defer></script>
 </body>
 </html>
