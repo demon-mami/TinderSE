@@ -16,6 +16,7 @@
   function normalizeEc(el) {
     const raw = el.textContent.trim();
     if (!raw) return;
+    if (/^EC\s/i.test(raw)) return;
 
     const value = raw.replace(/^Energy Centroid\s*/i, '').trim();
     const next = value ? `EC ${value}` : '';
