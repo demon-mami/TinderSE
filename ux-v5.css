@@ -1,0 +1,86 @@
+:root {
+  --playhead: #a78352;
+}
+
+/* Category palette remains available to cards, but only the active tab lights up. */
+.category-tab[data-category="Kick"], .sound-card[data-category="Kick"] {
+  --cat: #6f8192; --cat-ink: #536777; --cat-soft: #eef2f5; --cat-line: #c7d1d8;
+}
+.category-tab[data-category="SnareClap"], .sound-card[data-category="SnareClap"] {
+  --cat: #97777a; --cat-ink: #785c60; --cat-soft: #f5eeee; --cat-line: #d9c4c6;
+}
+.category-tab[data-category="Tom"], .sound-card[data-category="Tom"] {
+  --cat: #927b68; --cat-ink: #725f50; --cat-soft: #f4efe9; --cat-line: #d8cabc;
+}
+.category-tab[data-category="RimStick"], .sound-card[data-category="RimStick"] {
+  --cat: #85788f; --cat-ink: #695d73; --cat-soft: #f1eef3; --cat-line: #d2c8d7;
+}
+.category-tab[data-category="HiHat"], .sound-card[data-category="HiHat"] {
+  --cat: #748a7c; --cat-ink: #586e60; --cat-soft: #edf3ef; --cat-line: #c7d5cc;
+}
+.category-tab[data-category="Cymbal"], .sound-card[data-category="Cymbal"] {
+  --cat: #8f8664; --cat-ink: #706947; --cat-soft: #f4f2e9; --cat-line: #d7d1b8;
+}
+.category-tab[data-category="Percussion"], .sound-card[data-category="Percussion"] {
+  --cat: #6f898b; --cat-ink: #536d70; --cat-soft: #edf3f3; --cat-line: #c5d4d5;
+}
+
+.category-tab[data-category] {
+  color: var(--muted);
+  border-color: var(--line);
+  background: #fff;
+  box-shadow: none;
+}
+.category-tab[data-category].active {
+  color: var(--cat-ink);
+  border-color: var(--cat);
+  background: var(--cat-soft);
+  box-shadow: inset 0 -2px 0 var(--cat), 0 1px 4px rgba(50,70,85,.045);
+}
+
+.sound-card[data-category] {
+  border-color: var(--cat-line);
+  background: linear-gradient(180deg, var(--cat-soft) 0%, #fff 58%);
+}
+.sound-card[data-category] .index,
+.sound-card[data-category] .metric strong { color: var(--cat-ink); }
+.sound-card[data-category] .play-mark {
+  color: var(--cat-ink);
+  background: var(--cat-soft);
+  box-shadow: inset 0 0 0 1px var(--cat-line);
+}
+.sound-card[data-category].selected,
+.sound-card[data-category].consult {
+  border-color: var(--cat-line);
+  background: linear-gradient(180deg, var(--cat-soft) 0%, #fff 58%);
+}
+.sound-card[data-category].selected {
+  box-shadow: inset 0 -3px 0 rgba(215,103,96,.58), 0 3px 12px rgba(37,56,78,.035);
+}
+.sound-card[data-category].consult {
+  box-shadow: inset 0 -3px 0 rgba(141,113,76,.48), 0 3px 12px rgba(37,56,78,.035);
+}
+.sound-card[data-category].playing-main {
+  border-color: var(--cat);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--cat) 20%, transparent), var(--shadow);
+}
+
+html[data-active-category="Kick"] .category-head h2 { color: #536777; }
+html[data-active-category="SnareClap"] .category-head h2 { color: #785c60; }
+html[data-active-category="Tom"] .category-head h2 { color: #725f50; }
+html[data-active-category="RimStick"] .category-head h2 { color: #695d73; }
+html[data-active-category="HiHat"] .category-head h2 { color: #586e60; }
+html[data-active-category="Cymbal"] .category-head h2 { color: #706947; }
+html[data-active-category="Percussion"] .category-head h2 { color: #536d70; }
+
+/* Old duration and 130+ rows no longer exist. Keep cards compact. */
+.play-area {
+  min-height: 106px;
+  padding-bottom: 13px;
+}
+.metric { margin-top: 16px; }
+.decision-row { padding-top: 0; }
+
+@media (max-width: 560px) {
+  .play-area { min-height: 101px; }
+}
