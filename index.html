@@ -53,27 +53,24 @@
 
     <footer class="compare-dock" aria-label="波形比較">
       <div class="compare-head">
-        <div class="compare-current">
-          <span class="compare-kicker">NOW</span>
-          <span id="nowMain" class="compare-current-name">音源をタップしてください</span>
-        </div>
-        <button id="pinBtn" class="pin-btn" type="button" disabled>波形をピン止め</button>
+        <div id="nowMain" class="compare-current-name">音源をタップしてください</div>
+        <button id="pinBtn" class="pin-btn" type="button" aria-label="現在の波形を比較基準として固定" disabled>波形をピン止め</button>
       </div>
 
       <div class="wave-stage">
         <canvas id="waveCanvas" class="wave-canvas" aria-label="0msから130msまでの波形比較"></canvas>
-        <div class="wave-axis" aria-hidden="true"><span>0 ms</span><span>130 ms</span></div>
+        <div class="wave-axis" aria-hidden="true"><span>0</span><span>130 ms</span></div>
       </div>
 
       <div class="wave-meta" aria-live="polite">
         <div class="wave-meta-row now">
-          <span class="wave-swatch solid"></span>
-          <span id="waveNowName" class="wave-name">NOW —</span>
-          <span id="waveNowEc" class="wave-ec">Energy Centroid —</span>
+          <span class="wave-swatch solid" aria-hidden="true"></span>
+          <span id="waveNowName" class="wave-name wave-name-current"></span>
+          <span id="waveNowEc" class="wave-ec">EC —</span>
         </div>
-        <div class="wave-meta-row pin">
-          <span class="wave-swatch dashed"></span>
-          <span id="wavePinName" class="wave-name">PIN —</span>
+        <div id="wavePinRow" class="wave-meta-row pin" hidden>
+          <span class="wave-swatch dashed" aria-hidden="true"></span>
+          <span id="wavePinName" class="wave-name"></span>
           <span id="wavePinEc" class="wave-ec"></span>
         </div>
       </div>
@@ -81,5 +78,6 @@
   </div>
 
   <script src="app.js" defer></script>
+  <script src="dock-ui.js" defer></script>
 </body>
 </html>
