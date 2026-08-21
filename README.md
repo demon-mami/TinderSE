@@ -7,6 +7,7 @@ iPad向けの短音源・厳選用Webツールです。
 - 状態保存: ブラウザのlocalStorage
 - 結果出力: 選択済み音源だけCSV
 - CSV読込: 選択状態の復元 / 追加
+- 音源本体: `TinderSE_audio.pack` を初回だけ読み込み、iPad内のIndexedDBに保存
 
 ## 音源整理ルール
 
