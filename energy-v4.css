@@ -1,8 +1,10 @@
 :root {
-  --energy-stage-bg: #edf3f2;
+  --energy-stage-bg: #e7e9eb;
   --energy-current: #405b58;
-  --energy-ka: #6f91aa;
-  --energy-don: #b57979;
+  --energy-ka: #668eac;
+  --energy-don: #b47175;
+  --energy-guide: #858a90;
+  --energy-cut: #6f7479;
   --playhead: #a78352;
 }
 
@@ -15,18 +17,18 @@
 }
 
 .compare-dock {
-  padding: 7px;
-  background: #e7efee;
-  border-color: #9fb6b4;
+  padding: 5px;
+  background: #dfe2e4;
+  border-color: #aeb3b8;
 }
 
 .wave-stage {
   position: relative;
   margin: 0 !important;
-  height: 150px;
+  height: 154px;
   overflow: hidden;
-  border: 1px solid #9fb6b4;
-  border-radius: 11px;
+  border: 1px solid #aeb3b8;
+  border-radius: 8px;
   background: var(--energy-stage-bg);
 }
 
@@ -49,40 +51,54 @@
   pointer-events: none;
 }
 
+.duration.original-duration .duration-original-line,
+.duration.original-duration .duration-cut-line {
+  display: block;
+}
+
+.duration.original-duration .duration-cut-line {
+  margin-top: 1px;
+}
+
 .app-shell {
   padding-bottom: calc(178px + env(safe-area-inset-bottom));
 }
 
 @media (min-width: 700px) {
   .compare-dock {
-    width: min(calc(100% - 16px), 1100px);
-    padding: 8px;
+    width: min(calc(100% - 12px), 1160px);
+    padding: 5px;
   }
+
   .wave-stage {
-    height: 168px;
+    height: 188px;
   }
+
   .app-shell {
-    padding-bottom: calc(198px + env(safe-area-inset-bottom));
+    padding-bottom: calc(214px + env(safe-area-inset-bottom));
   }
 }
 
 @media (min-width: 1000px) {
   .wave-stage {
-    height: 182px;
+    height: 204px;
   }
+
   .app-shell {
-    padding-bottom: calc(212px + env(safe-area-inset-bottom));
+    padding-bottom: calc(230px + env(safe-area-inset-bottom));
   }
 }
 
 @media (max-width: 560px) {
   .compare-dock {
-    width: calc(100% - 10px);
-    padding: 6px;
+    width: calc(100% - 8px);
+    padding: 4px;
   }
+
   .wave-stage {
-    height: 124px;
+    height: 126px;
   }
+
   .app-shell {
     padding-bottom: calc(150px + env(safe-area-inset-bottom));
   }
