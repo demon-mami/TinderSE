@@ -1,0 +1,89 @@
+:root {
+  --energy-stage-bg: #edf3f2;
+  --energy-current: #405b58;
+  --energy-ka: #6f91aa;
+  --energy-don: #b57979;
+  --playhead: #a78352;
+}
+
+.compare-head,
+.wave-meta,
+.wave-axis,
+#pinBtn,
+#playheadCanvas {
+  display: none !important;
+}
+
+.compare-dock {
+  padding: 7px;
+  background: #e7efee;
+  border-color: #9fb6b4;
+}
+
+.wave-stage {
+  position: relative;
+  margin: 0 !important;
+  height: 150px;
+  overflow: hidden;
+  border: 1px solid #9fb6b4;
+  border-radius: 11px;
+  background: var(--energy-stage-bg);
+}
+
+.wave-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.energy-envelope-canvas {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.app-shell {
+  padding-bottom: calc(178px + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 700px) {
+  .compare-dock {
+    width: min(calc(100% - 16px), 1100px);
+    padding: 8px;
+  }
+  .wave-stage {
+    height: 168px;
+  }
+  .app-shell {
+    padding-bottom: calc(198px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (min-width: 1000px) {
+  .wave-stage {
+    height: 182px;
+  }
+  .app-shell {
+    padding-bottom: calc(212px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 560px) {
+  .compare-dock {
+    width: calc(100% - 10px);
+    padding: 6px;
+  }
+  .wave-stage {
+    height: 124px;
+  }
+  .app-shell {
+    padding-bottom: calc(150px + env(safe-area-inset-bottom));
+  }
+}
