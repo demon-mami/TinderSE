@@ -51,10 +51,32 @@
       </section>
     </main>
 
-    <footer class="now-playing" aria-live="polite">
-      <div class="now-label">再生中</div>
-      <div class="now-main" id="nowMain">—</div>
-      <div class="now-source" id="nowSource"></div>
+    <footer class="compare-dock" aria-label="波形比較">
+      <div class="compare-head">
+        <div class="compare-current">
+          <span class="compare-kicker">NOW</span>
+          <span id="nowMain" class="compare-current-name">音源をタップしてください</span>
+        </div>
+        <button id="pinBtn" class="pin-btn" type="button" disabled>波形をピン止め</button>
+      </div>
+
+      <div class="wave-stage">
+        <canvas id="waveCanvas" class="wave-canvas" aria-label="0msから130msまでの波形比較"></canvas>
+        <div class="wave-axis" aria-hidden="true"><span>0 ms</span><span>130 ms</span></div>
+      </div>
+
+      <div class="wave-meta" aria-live="polite">
+        <div class="wave-meta-row now">
+          <span class="wave-swatch solid"></span>
+          <span id="waveNowName" class="wave-name">NOW —</span>
+          <span id="waveNowEc" class="wave-ec">Energy Centroid —</span>
+        </div>
+        <div class="wave-meta-row pin">
+          <span class="wave-swatch dashed"></span>
+          <span id="wavePinName" class="wave-name">PIN —</span>
+          <span id="wavePinEc" class="wave-ec"></span>
+        </div>
+      </div>
     </footer>
   </div>
 
