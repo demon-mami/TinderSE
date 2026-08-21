@@ -7,6 +7,7 @@
   <title>TinderSE</title>
   <link rel="stylesheet" href="style.css?v=2">
   <link rel="stylesheet" href="ux-v3.css?v=3">
+  <link rel="stylesheet" href="energy-v4.css?v=4">
 </head>
 <body>
   <div class="app-shell">
@@ -54,14 +55,14 @@
       </section>
     </main>
 
-    <footer class="compare-dock" aria-label="波形比較">
+    <footer class="compare-dock" aria-label="音の強さの時間分布比較">
       <div class="compare-head">
         <div id="nowMain" class="compare-current-name">音源をタップしてください</div>
-        <button id="pinBtn" class="pin-btn" type="button" aria-label="現在の波形を比較基準として固定" data-state="empty" disabled></button>
+        <button id="pinBtn" class="pin-btn" type="button" aria-label="比較基準" data-state="empty" disabled></button>
       </div>
 
       <div class="wave-stage">
-        <canvas id="waveCanvas" class="wave-canvas" aria-label="0msから130msまでの波形比較"></canvas>
+        <canvas id="waveCanvas" class="wave-canvas" aria-hidden="true"></canvas>
         <div class="wave-axis" aria-hidden="true"><span>0</span><span>130 ms</span></div>
       </div>
 
@@ -81,5 +82,6 @@
 
   <script src="app.js?v=2" defer></script>
   <script src="ux-v3.js?v=3" defer></script>
+  <script src="energy-v4.js?v=4" defer></script>
 </body>
 </html>
